@@ -1,0 +1,143 @@
+/* SASSS VARIABLES */
+
+// RESPONSIVE BREAKPONTS
+
+$bp-mobile: 23.75em; // 380px/16px(font-root)
+
+/* CSS VARIABLES */
+
+:root {
+  --Dark-cyan: hsl(185, 75%, 39%);
+  --Very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --Dark-grayish-blue: hsl(227, 10%, 46%);
+
+  --Dark-gray: hsl(0, 0%, 59%);
+
+  /* SHADOW */
+
+  --shadow: 0 2px 10px hsla(185, 75%, 39%, 0.8);
+}
+
+/* BASIC RESET */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px/16px (font-root) = 62.5%
+  box-sizing: border-box;
+}
+
+.container {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--Very-dark-desaturated-blue);
+  max-width: 144rem;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: var(--Dark-cyan);
+  background-image: url(../img/bg-pattern-top.svg),
+    url(../img/bg-pattern-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: -65% 200%, 160% -120%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (max-width: $bp-mobile) {
+    background-position: 120% 205%, -25% -85%;
+  }
+}
+
+/* CARD */
+
+.card {
+  width: 36rem;
+  height: 38rem;
+  border-radius: 12px;
+  overflow: hidden;
+
+  @media only screen and (max-width: $bp-mobile) {
+    width: 33rem;
+  }
+
+  /* USER SIDE */
+
+  /* WRAPPING ALL THE USER CONTENT */
+
+  &__user {
+    background: #fff url(../img/bg-pattern-card.svg) repeat-x;
+    height: 29rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin-top: 8.5rem;
+  }
+
+  &__data {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-right: 1rem;
+  }
+
+  &__age {
+    color: var(--Dark-gray);
+    font-size: 1.8rem;
+  }
+
+  &__city {
+    font-size: 1.5rem;
+    color: var(--Dark-grayish-blue);
+    margin-bottom: 2.5rem;
+  }
+
+  /* MEDIA INFO */
+
+  /* WRAPPING ALL THE STADISTIC */
+
+  &__media {
+    padding: 2.45rem 4rem;
+    background-color: #fff;
+    border-top: 0.5px solid var(--Dark-gray);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  &__text {
+    font-size: 1.3rem;
+    color: var(--Dark-gray);
+    letter-spacing: 2px;
+  }
+}
